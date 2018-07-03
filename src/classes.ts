@@ -10,6 +10,10 @@ class Greeter {
   greet(): string {
     return `Hello, ` + this.greeting;
   }
+
+  greet2 = (): string => {
+    return `Hello, ` + this.greeting;
+  };
 }
 
 let greeter = new Greeter("world");
@@ -78,7 +82,7 @@ log(`dad2: ${dad2.name}, ${dad2.numOfLegs}`);
 
 let passcode = "secret passcode";
 class Employee {
-  private _fullName: string;
+  private _fullName: string = "";
   get fullName(): string {
     return this._fullName;
   }
@@ -112,10 +116,7 @@ log(g1.calculateDistanceFromOrigin({ x: 10, y: 10 }));
 log(g5.calculateDistanceFromOrigin({ x: 10, y: 10 }));
 
 abstract class Department {
-
-  constructor(public name: string) {
-
-  }
+  constructor(public name: string) {}
 
   printName(): void {
     log(`Department name: ${this.name}`);
@@ -125,7 +126,6 @@ abstract class Department {
 }
 
 class AccountingDepartment extends Department {
-
   constructor() {
     super("Accounting and Auditing");
   }
